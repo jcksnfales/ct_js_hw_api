@@ -9,11 +9,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 <script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <title>Art Gallery</title>
 </head>
 <body class="bg-dark text-light">
     <header class="col-12 my-4">
-        <div class="h2 text-center text-white m-0">Favorites from the Art Institute of Chicago</div>
+        <div class="h2 text-center text-white">Favorites from the Art Institute of Chicago</div>
+        <div class="text-center text-secondary"><small>Click a picture for more info about the artpiece.</small></div>
     </header>
     <!--
             <figure class="figure">
@@ -21,86 +23,88 @@
                 <figcaption class="figure-caption text-center"><em></em></figcaption>
             </figure>
     -->
-    <div id="content-parent" class="row px-2">
+    <!-- GALLERY -->
+    <section id="content-parent" class="row px-4">
         <div class="col-4">
-            <figure class="figure">
-                <img src="img/1917.200.jpg" alt="Icebound" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>Icebound</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('72801')">
+                <img id="72801" src="img/1917.200.jpg" alt="Icebound" class="figure-img img-fluid rounded">
             </figure>
-            <figure class="figure">
-                <img src="img/1894.1024.jpg" alt="Pastoral Landscape with Ruins" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>Pastoral Landscape with Ruins</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('863')">
+                <img id="863" src="img/1894.1024.jpg" alt="Pastoral Landscape with Ruins" class="figure-img img-fluid rounded">
             </figure>
-            <figure class="figure">
-                <img src="img/1956.1045.jpg" alt="The Nativity and the Adoration of the Shepherds" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>The Nativity and the Adoration of the Shepherds</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('4376')">
+                <img id="4376" src="img/1956.1045.jpg" alt="The Nativity and the Adoration of the Shepherds" class="figure-img img-fluid rounded">
             </figure>
-            <figure class="figure">
-                <img src="img/1933.1116.jpg" alt="The Bay of Marseille, Seen from L'Estaque" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>The Bay of Marseille, Seen from L'Estaque</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('16487')">
+                <img id="16487" src="img/1933.1116.jpg" alt="The Bay of Marseille, Seen from L'Estaque" class="figure-img img-fluid rounded">
             </figure>
-            <figure class="figure">
-                <img src="img/1919.753.jpg" alt="View of Cotopaxi" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>View of Cotopaxi</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('76571')">
+                <img id="76571" src="img/1919.753.jpg" alt="View of Cotopaxi" class="figure-img img-fluid rounded">
             </figure>
-            <figure class="figure">
-                <img src="img/1887.252.jpg" alt="View of Ponte Lugano on the Anio, from Views of Rome" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>View of Ponte Lugano on the Anio, from Views of Rome</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('19')">
+                <img id="19" src="img/1887.252.jpg" alt="View of Ponte Lugano on the Anio, from Views of Rome" class="figure-img img-fluid rounded">
             </figure>
         </div>
         <div class="col-4">
-            <figure class="figure">
-                <img src="img/1887.273.jpg" alt="Souvenir of Tuscany" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>Souvenir of Tuscany</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('28')">
+                <img id="28" src="img/1887.273.jpg" alt="Souvenir of Tuscany" class="figure-img img-fluid rounded">
             </figure>
-            <figure class="figure">
-                <img src="img/1922.426.jpg" alt="Bordighera" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>Bordighera</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('81537')">
+                <img id="81537" src="img/1922.426.jpg" alt="Bordighera" class="figure-img img-fluid rounded">
             </figure>
-            <figure class="figure">
-                <img src="img/1933.439.jpg" alt="The Beach at Sainte-Adresse" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>The Beach at Sainte-Adresse</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('14598')">
+                <img id="14598" src="img/1933.439.jpg" alt="The Beach at Sainte-Adresse" class="figure-img img-fluid rounded">
             </figure>
-            <figure class="figure">
-                <img src="img/1931.511.jpg" alt="Improvisation No. 30 (Cannons)" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>Improvisation No. 30 (Cannons)</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('8991')">
+                <img id="8991" src="img/1931.511.jpg" alt="Improvisation No. 30 (Cannons)" class="figure-img img-fluid rounded">
             </figure>
-            <figure class="figure">
-                <img src="img/1954.326.jpg" alt="Self-Portrait" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>Self-Portrait</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('80607')">
+                <img id="80607" src="img/1954.326.jpg" alt="Self-Portrait" class="figure-img img-fluid rounded">
             </figure>
-            <figure class="figure">
-                <img src="img/1933.1235.jpg" alt="After the Hurricane, Bahamas" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>After the Hurricane, Bahamas</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('16776')">
+                <img id="16776" src="img/1933.1235.jpg" alt="After the Hurricane, Bahamas" class="figure-img img-fluid rounded">
             </figure>
         </div>
         <div class="col-4">
-            <figure class="figure">
-                <img src="img/1930.59.jpg" alt="Mitsuke: Ferries Crossing the Tenryu River" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>Mitsuke: Ferries Crossing the Tenryu River</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('4368')">
+                <img id="4368" src="img/1930.59.jpg" alt="Mitsuke: Ferries Crossing the Tenryu River" class="figure-img img-fluid rounded">
             </figure>
-            <figure class="figure">
-                <img src="img/1887.455.jpg" alt="Old Oaks at Bas Bréau" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>Old Oaks at Bas Bréau</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('71')">
+                <img id="71" src="img/1887.455.jpg" alt="Old Oaks at Bas Bréau" class="figure-img img-fluid rounded">
             </figure>
-            <figure class="figure">
-                <img src="img/1930.500.jpg" alt="Landscape with Saint John on Patmos" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>Landscape with Saint John on Patmos</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('5848')">
+                <img id="5848" src="img/1930.500.jpg" alt="Landscape with Saint John on Patmos" class="figure-img img-fluid rounded">
             </figure>
-            <figure class="figure">
-                <img src="img/1933.1157.jpg" alt="Water Lilies" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>Water Lilies</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('16568')">
+                <img id="16568" src="img/1933.1157.jpg" alt="Water Lilies" class="figure-img img-fluid rounded">
             </figure>
-            <figure class="figure">
-                <img src="img/1933.443.jpg" alt="Cliff Walk at Pourville" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>Cliff Walk at Pourville</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('14620')">
+                <img id="14620" src="img/1933.443.jpg" alt="Cliff Walk at Pourville" class="figure-img img-fluid rounded">
             </figure>
-            <figure class="figure">
-                <img src="img/1990.165.jpg" alt="Flower Clouds" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption text-center"><em>Flower Clouds</em></figcaption>
+            <figure class="figure" onclick="event.stopPropagation(); doInfoPopup('76395')">
+                <img id="76395" src="img/1990.165.jpg" alt="Flower Clouds" class="figure-img img-fluid rounded">
             </figure>
         </div>
-    </div>
+    </section>
+
+    <!-- ARTPIECE INFO POPUP MODAL -->
+    <button id="modalToggler" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#modalContainer">Test</button>
+    <section id="modalContainer" class="modal fade" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-dark">
+                    <div class="modal-header border-bottom-0 pb-1">
+                        <div id="modalTitle" class="modal-title fs-5">artpiece title</div>
+                        <button class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-light pt-0">
+                        <p id="modalInfoArtist" class="mb-1">artist name</p>
+                        <p class="mb-1"><small id="modalInfoDate">artpiece date</small>, <small id="modalInfoOrigin">place of origin</small></p>
+                        <p class="mb-0"><small id="modalInfoMedium">art medium</small></p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
 </body>

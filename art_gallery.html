@@ -88,9 +88,9 @@
     </section>
 
     <!-- ARTPIECE INFO POPUP MODAL -->
-    <button id="modalToggler" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#modalContainer">Test</button>
+    <button id="modalToggler" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#modalContainer">modal toggle</button>
     <section id="modalContainer" class="modal fade" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog">
             <div class="modal-content bg-dark">
                 <div class="modal-header border-bottom-0 pb-1">
                     <div id="modalTitle" class="modal-title fs-5">artpiece title</div>
@@ -101,6 +101,11 @@
                     <p class="mb-1"><small id="modalInfoDate">artpiece date</small>, <small id="modalInfoOrigin">place of origin</small></p>
                     <p class="mb-0"><small id="modalInfoMedium">art medium</small></p>
                 </div>
+            </div>
+        </div>
+        <div class="col-11 col-sm-9 col-md-8 col-lg-7 col-xl-6 mx-auto">
+            <div class="d-flex content-justify-center">
+                <img id="modalImage" src="img/1990.165.jpg" alt="" class="img-fluid rounded">
             </div>
         </div>
     </section>

@@ -13,6 +13,7 @@ const doInfoPopup = async (id) => {
     document.getElementById("modalInfoDate").innerHTML = pieceData.date_display;
     document.getElementById("modalInfoOrigin").innerHTML = pieceData.place_of_origin;
     document.getElementById("modalInfoMedium").innerHTML = pieceData.medium_display;
+    document.getElementById("modalImage").src = document.getElementById(id).src;
 
     // simulate button click to show modal
     document.getElementById("modalToggler").click();
